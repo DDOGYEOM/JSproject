@@ -1,0 +1,86 @@
+[
+    {
+        "seasonId":101,
+        "className":"ICON"
+    },
+    {
+        "seasonId":201,
+        "className":"NHD(NATIONAL HERO DEBUT)"
+    },
+    {
+        "seasonId":202,
+        "className":"TKI (TEAM KOREA ICON)"
+    },
+    {
+        "seasonId":206,
+        "className":"TB (TOURNAMENT BEST)"
+    },
+    {
+        "seasonId":207,
+        "className":"TT (TOP TRANSFER)"
+    },
+    {
+        "seasonId":210,
+        "className":"GR (GOLDEN ROOKIES)"
+    },
+    {
+        "seasonId":211,
+        "className":"19TOTY (19 TEAM OF THE YEAR)"
+    },
+    {
+        "seasonId":212,
+        "className":"18TOTY (18 TEAM OF THE YEAR)"
+    },
+    {
+        "seasonId":213,
+        "className":"MC ICON"
+    },
+    {
+        "seasonId":214,
+        "className":"TC (TOURNAMENT CHAMPIONS)"
+    },
+    {
+        "seasonId":215,
+        "className":"19TOTS (19 TEAM OF THE SEASON)"
+    },
+    {
+        "seasonId":216,
+        "className":"HOT (HEROES OF THE TEAM)"
+    },
+    {
+        "seasonId":217,
+        "className":"COC (COMPETITOR OF CONTINENTS)"
+    },
+    {
+        "seasonId":218,
+        "className":"OTW (ONES TO WATCH)"
+    },
+    {
+        "seasonId":295,
+        "className":"K19 (2019 KFA)"
+    },
+    {
+        "seasonId":297,
+        "className":"17-18 MANCITY CHAMPIONS"
+    },
+    {
+        "seasonId":298,
+        "className":"K18 (2018 KFA)"
+    },
+    {
+        "seasonId":300,
+        "className":"18 (LIVE)"
+    },
+    {
+        "seasonId":317,
+        "className":"17 (LIVE)"
+    },
+    {
+        "seasonId":500,
+        "className":"18A (PREMIUM LIVE)"
+    },
+    {
+        "seasonId":501,
+        "className":"18S (18-19 PLC SPRING)"
+    }
+]

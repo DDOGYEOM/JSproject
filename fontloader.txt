@@ -1,0 +1,18 @@
+import { FontsLoader } from fonts-loader'
+
+const loader = new FontsLoader([
+        {
+            name: 'Hack', 
+            source: 'https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.003/web/fonts/hack-regular.woff',
+            descriptor: {
+                family:'Hack',
+                style: 'normal',
+                weight: 'normal'
+            }
+        },
+        {
+            name: 'Hanalei',
+            source: './fonts/Hanalei-Regular.ttf',
+        }
+    ]
+)
