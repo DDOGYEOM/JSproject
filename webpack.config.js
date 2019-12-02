@@ -2,31 +2,43 @@ const path = require('path');
 const MiniCss = require('mini-css-extract-plugin');
 
 module.exports = {
-    mode:"development",
+    mode: "development",
     entry: './src/app.js',
     output: {
         filename: 'app.js',
         path: path.join(__dirname, 'dist')
     },
-    target: "electron-renderer" ,
-    module:{
-        rules:[
+    target: "electron-renderer",
+    module: {
+        rules: [
             {
-                test:/\.css$/,
-                use:[
+                test: /\.css$/,
+                use: [
                     {
                         loader: MiniCss.loader,
-                        options:{
-                            hmr:process.env.NODE_ENV === 'development'
+                        options: {
+                            hmr: process.env.NODE_ENV === 'development'
                         }
                     },
                     'css-loader'
+                ]
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'fonts/'
+                        }
+                    }
                 ]
             }
         ]
     },
     plugins: [
-        new MiniCss({filename: 'style.css'})
+        new MiniCss({ filename: 'style.css' })
     ],
     resolve: {
         modules: ['node_modules'],

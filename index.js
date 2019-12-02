@@ -2,20 +2,21 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const request = require('request');
 const cheerio = require('cheerio');
+const APILoader = require('./src/APILoader.js');
 
 const options = {
-  method: 'GET',
-  url: 'https://free-football-soccer-videos.p.rapidapi.com/',
-  headers: {
-    'x-rapidapi-host': 'free-football-soccer-videos.p.rapidapi.com',
-    'x-rapidapi-key': '96a8d15a6bmshc0654c464a47c02p177b0ajsn5f3fb97678e4'
-  }
+    method: 'GET',
+    url: 'https://free-football-soccer-videos.p.rapidapi.com/',
+    headers: {
+        'x-rapidapi-host': 'free-football-soccer-videos.p.rapidapi.com',
+        'x-rapidapi-key': '96a8d15a6bmshc0654c464a47c02p177b0ajsn5f3fb97678e4'
+    }
 };
 
 request(options, function (error, response, body) {
-	if (error) throw new Error(error);
+    if (error) throw new Error(error);
 
-	console.log(body.items);
+    console.log(body.items);
 });
 
 
@@ -41,22 +42,18 @@ app.on("ready", () => {
     // win.webContents.openDevTools();
 });
 
+let api = new APILoader();
+
 ipcMain.on("openDev", (e, arg) => {
     win.webContents.openDevTools();
 });
 
-// ipcMain.on("loadData", (e, arg) => {
-//     let url = 'http://www.youtube.com/results?search_query=' + arg.searchWord;
-//     request(url, (err, res, body) => {
-//         let $ = cheerio.load(body);
+ipcMain.on("loadData", (e, arg) => {
+    api.loadImage("101001668").then( data=>{
+        e.reply('imageData', data);
+    });
+});
 
-//         let list = $("ytd-video-renderer.style-scope .yt-simple-endpoint.style-scope.ytd-video-renderer");
-//         // let list = $(".ah_roll_area > .ah_l > li > a > .ah_k");
-
-//         let word = [];
-//         [].forEach.call(list, x => {
-//             word.push($(x).text());
-//         });
-//         e.returnValue = word;
-//     });
-// });
+ipcMain.on("loadPlayer", (e, arg)=>{
+    api.loadUser("손흥민");
+});
